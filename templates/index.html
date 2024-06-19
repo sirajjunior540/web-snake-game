@@ -14,8 +14,16 @@
             margin: 0;
             background-color: #e0f7fa;
         }
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         canvas {
             border: 1px solid #000;
+            width: 100%;  /* Make the canvas scale to fit the container */
+            max-width: 600px;  /* Max width to keep it responsive */
+            height: auto;  /* Maintain aspect ratio */
         }
         .joystick-container {
             position: relative;
@@ -39,13 +47,16 @@
     </style>
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
+    <div class="canvas-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+    </div>
     <div class="joystick-container">
         <div class="joystick" id="joystick"></div>
     </div>
     <script src="{{ url_for('static', path='js/snake.js') }}"></script>
 </body>
 </html>
+
 
 
 

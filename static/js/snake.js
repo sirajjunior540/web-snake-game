@@ -1,20 +1,6 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-// Set canvas size based on screen width
-function resizeCanvas() {
-    if (window.innerWidth < 600) {
-        canvas.width = window.innerWidth - 20;
-        canvas.height = window.innerWidth - 20;
-    } else {
-        canvas.width = 800;
-        canvas.height = 600;
-    }
-}
-
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
 const snakeBlock = 10;
 let snakeSpeed = 100;
 let snake = [{ x: canvas.width / 2, y: canvas.height / 2 }];
